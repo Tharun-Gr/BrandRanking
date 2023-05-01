@@ -7,6 +7,7 @@ import Category from './Category.js'
 import Ranking from './Ranking.js'
 import ComparisonView from './ComparisonView.js'
 import myImage from './code-compare-solid.svg'
+import Card from '@mui/material/Card';
 
 const JSON_DATA = [
   {
@@ -5705,24 +5706,26 @@ function App() {
 
   return (
     <div className="app"> 
-      <div className="header">
-        <div style={{display: "flex"}}>
-          <SearchBar 
-            brandList={brandList} 
-            searchBrand={searchBrand} 
-            selectedBrand={selectedBrand}/>
-          {selectedBrand &&
-          <img style={{width: "1.5rem", margin: "0 1rem"}} src={myImage} alt="My Image"></img>}
-          {selectedBrand &&
+      <Card style={{padding: "1rem", backgroundColor: "cornsilk"}}>
+        <div className="header">
+          <div style={{display: "flex"}}>
             <SearchBar 
               brandList={brandList} 
-              searchBrand={searchComparisonBrand} 
-              selectedBrand={selectedComparisonBrand}/>
-          }
+              searchBrand={searchBrand} 
+              selectedBrand={selectedBrand}/>
+            {selectedBrand &&
+            <img style={{width: "1.5rem", margin: "0 1rem"}} src={myImage} alt="My Image"></img>}
+            {selectedBrand &&
+              <SearchBar 
+                brandList={brandList} 
+                searchBrand={searchComparisonBrand} 
+                selectedBrand={selectedComparisonBrand}/>
+            }
+          </div>
+          <BrandName name={brandDetail.brand} nameTwo={brandComparisonDetail.brand}/>
+          <Category category={category} categoryChanged={categoryChanged}/>
         </div>
-        <BrandName name={brandDetail.brand} nameTwo={brandComparisonDetail.brand}/>
-        <Category category={category} categoryChanged={categoryChanged}/>
-      </div>
+      </Card>
       <div className="content">
         {(selectedComparisonBrand && selectedBrand) &&
           <ComparisonView brandDetail={brandDetail} brandComparisonDetail={brandComparisonDetail} />
