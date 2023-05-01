@@ -7,6 +7,7 @@ import Category from './Category.js'
 import Ranking from './Ranking.js'
 import ComparisonView from './ComparisonView.js'
 import myImage from './code-compare-solid.svg'
+import myImage2 from './ranking-star-solid.svg'
 import Card from '@mui/material/Card';
 
 const JSON_DATA = [
@@ -5727,6 +5728,11 @@ function App() {
         </div>
       </Card>
       <div className="content">
+        {(!selectedComparisonBrand && !selectedBrand && !category) &&
+          <div class="empty-logo">
+            <img style={{width: "30%"}} src={myImage2} alt="My Image"></img>
+          </div>
+        }
         {(selectedComparisonBrand && selectedBrand) &&
           <ComparisonView brandDetail={brandDetail} brandComparisonDetail={brandComparisonDetail} />
         }
