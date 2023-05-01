@@ -5,7 +5,8 @@ import BrandName from './BrandName.js'
 import BrandView from './BrandView.js'
 import Category from './Category.js'
 import Ranking from './Ranking.js'
-// import { JSON_DATA } from './data.js';
+import ComparisonView from './ComparisonView.js'
+import myImage from './code-compare-solid.svg'
 
 const JSON_DATA = [
   {
@@ -5662,6 +5663,8 @@ function App() {
   const [brandList, setBrandList] = useState([]);
   const [selectedBrand, setSelectedBrand] = useState("")
   const [brandDetail, setBrandDetail] = useState({})
+  const [selectedComparisonBrand, setSelectedComparisonBrand] = useState("")
+  const [brandComparisonDetail, setBrandComparisonDetail] = useState({})
   const [category, setCategory] = useState("")
 
   useEffect(() => {
@@ -5683,30 +5686,51 @@ function App() {
     }
   }
 
+  function searchComparisonBrand(brand) {
+    if ((brand != null) && (brand != "")) {
+      setSelectedComparisonBrand(brand)
+      const brandFound = jsonData.find((item) => item.brand === brand);
+      setBrandComparisonDetail(brandFound)
+      setCategory("")
+    }
+  }
+
   function categoryChanged(data) {
     setCategory(data)
     setSelectedBrand("")
     setBrandDetail({})
+    setSelectedComparisonBrand("")
+    setBrandComparisonDetail({})
   }
 
   return (
     <div className="app"> 
       <div className="header">
-        <SearchBar 
-          brandList={brandList} 
-          searchBrand={searchBrand} 
-          selectedBrand={selectedBrand}/>
-        <BrandName name={brandDetail.brand}/>
+        <div style={{display: "flex"}}>
+          <SearchBar 
+            brandList={brandList} 
+            searchBrand={searchBrand} 
+            selectedBrand={selectedBrand}/>
+          {selectedBrand &&
+          <img style={{width: "1.5rem", margin: "0 1rem"}} src={myImage} alt="My Image"></img>}
+          {selectedBrand &&
+            <SearchBar 
+              brandList={brandList} 
+              searchBrand={searchComparisonBrand} 
+              selectedBrand={selectedComparisonBrand}/>
+          }
+        </div>
+        <BrandName name={brandDetail.brand} nameTwo={brandComparisonDetail.brand}/>
         <Category category={category} categoryChanged={categoryChanged}/>
       </div>
       <div className="content">
-        {
-          
+        {(selectedComparisonBrand && selectedBrand) &&
+          <ComparisonView brandDetail={brandDetail} brandComparisonDetail={brandComparisonDetail} />
         }
         {category &&
           <Ranking category={category} jsonData={jsonData}/>
         }
-        {selectedBrand &&
+        {(selectedBrand && !selectedComparisonBrand) &&
           <BrandView brandDetail={brandDetail}/>
         }
       </div>

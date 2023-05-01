@@ -10,7 +10,20 @@ function BrandName(props) {
           <span style={{marginRight: "1rem", fontWeight: 800}}>Brand Ranking</span>
           <img style={{width: "3rem"}} src={myImage} alt="My Image"></img>
         </div>
-        <span style={{fontWeight: 600}}>{props.name && props.name.charAt(0).toUpperCase() + props.name.slice(1)}</span>
+        {!props.nameTwo &&
+          <span 
+            style={{fontWeight: 600}}
+          >
+            {props.name && props.name.charAt(0).toUpperCase() + props.name.slice(1)}
+          </span>
+        }
+        {props.nameTwo &&
+          <span 
+            style={{fontWeight: 600}}
+          >
+            {props.name && props.name.charAt(0).toUpperCase() + props.name.slice(1)} vs {props.nameTwo && props.nameTwo.charAt(0).toUpperCase() + props.nameTwo.slice(1)} 
+          </span>
+        }
     </div>
   );
 }

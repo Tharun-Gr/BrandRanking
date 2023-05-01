@@ -91,12 +91,12 @@ function BrandView(props) {
         </div>
 
         <div className="">
-        <Card style={{ padding: "1rem", backgroundColor: "cornsilk" }}>
-          <CardHeader
-            title="Reviews split"
-          />
-          <Chart type="pie" data={pieChartData}></Chart>
-        </Card>
+          <Card style={{ padding: "1rem", backgroundColor: "cornsilk" }}>
+            <CardHeader
+              title="Reviews split"
+            />
+            <Chart type="pie" data={pieChartData}></Chart>
+          </Card>
         </div>
     </div>
     
