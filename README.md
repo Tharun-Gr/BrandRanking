@@ -42,3 +42,20 @@ Played a pivotal role in visualizing data post-analysis, enabling clear and insi
 
 <img width="759" alt="Screenshot 2023-09-05 at 7 31 06 PM" src="https://github.com/Tharun-Gr/BrandRanking/assets/43008969/70a99249-e5d9-4db7-8cb3-56389f7db954">
 
+## Tableau Dashboard UI
+
+<img width="374" alt="Screenshot 2023-09-05 at 10 30 22 PM" src="https://github.com/Tharun-Gr/BrandRanking/assets/43008969/52dffaed-409f-480a-b759-0ccd891c776a">
+
+## UI Dashboard
+
+<img width="393" alt="Screenshot 2023-09-05 at 10 32 41 PM" src="https://github.com/Tharun-Gr/BrandRanking/assets/43008969/2713d7e0-6d4c-4a9d-993a-327b8fba1457">
+
+<img width="359" alt="Screenshot 2023-09-05 at 10 33 12 PM" src="https://github.com/Tharun-Gr/BrandRanking/assets/43008969/4d8ff54a-3e89-4007-915f-dcbab9825753">
+
+<img width="356" alt="Screenshot 2023-09-05 at 10 34 02 PM" src="https://github.com/Tharun-Gr/BrandRanking/assets/43008969/da8e8e19-fc5f-445d-ba17-3d503c7b6d8d">
+
+
+
+
+
+
